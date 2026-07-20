@@ -33,15 +33,15 @@ FreeTether Status:
 --- pfctl -s info ---
 No ALTQ support in kernel
 ALTQ related functions disabled
-Status: Disabled for 0 days 00:27:35          Debug: Urgent
+Status: Disabled for 0 days 00:30:10          Debug: Urgent
 
 State Table                          Total             Rate
   current entries                        0
-  searches                          328310          198.4/s
-  inserts                            28586           17.3/s
-  removals                           28586           17.3/s
+  searches                          328310          181.4/s
+  inserts                            28586           15.8/s
+  removals                           28586           15.8/s
 Counters
-  match                              29575           17.9/s
+  match                              29575           16.3/s
   bad-offset                             0            0.0/s
   fragment                               0            0.0/s
   short                                  0            0.0/s
@@ -51,7 +51,7 @@ Counters
   congestion                             0            0.0/s
   ip-option                            199            0.1/s
   proto-cksum                            0            0.0/s
-  state-mismatch                        89            0.1/s
+  state-mismatch                        89            0.0/s
   state-insert                           0            0.0/s
   state-limit                            0            0.0/s
   src-limit                              0            0.0/s
@@ -367,17 +367,18 @@ pfctl: DIOCGETRULES: Invalid argument
 21723 /System/Library/PrivateFrameworks/SafariFoundation.framework/XPCServices/CredentialProviderExtensionHelper.xpc/Cr
 21725 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.Networking.xpc/com.apple.WebKit.Networki
 21726 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
-21727 /private/var/containers/Bundle/Application/A575FF84-35A1-446B-96AC-350619DCB2AD/Opera.app/PlugIns/WireGuard Netwo
 21728 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
 21731 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
-21746 sshd: mobile@ttys000
+21778 /private/var/containers/Bundle/Application/A575FF84-35A1-446B-96AC-350619DCB2AD/Opera.app/PlugIns/WireGuard Netwo
+21784 /System/Library/PrivateFrameworks/MobileBackup.framework/backupd
+21786 sshd: mobile@ttys000
 14439 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter
-21749 -zsh
-21760 sudo
+21788 -zsh
+21794 sudo
 21696 -zsh
-21761 sudo
-21762 freetether-cli
-21766 /bin/ps
+21796 sudo
+21797 freetether-cli
+21801 /bin/ps
 
 === Recent [FreeTether] logs (last 30 lines) ===
   Run: grep FreeTether /var/log/syslog | tail -30
