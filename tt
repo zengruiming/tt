@@ -23,6 +23,7 @@ FreeTether Status:
   ipsec0       UP    IPv6   2408:8553:440:2d2:800:9324:e6ce:e8a9  (point-to-point)
   ipsec1       UP    IPv6   fe80::94f2:142c:bb71:1918  (point-to-point)
   ipsec1       UP    IPv6   2408:8553:440:2d2:800:9324:e6ce:e8a9  (point-to-point)
+  utun3        UP    IPv4   10.0.7.172  (point-to-point)
 
 === IP Forwarding ===
   net.inet.ip.forwarding = 0
@@ -32,15 +33,15 @@ FreeTether Status:
 --- pfctl -s info ---
 No ALTQ support in kernel
 ALTQ related functions disabled
-Status: Disabled for 0 days 00:14:56          Debug: Urgent
+Status: Disabled for 0 days 00:27:35          Debug: Urgent
 
 State Table                          Total             Rate
   current entries                        0
-  searches                          328310          366.4/s
-  inserts                            28586           31.9/s
-  removals                           28586           31.9/s
+  searches                          328310          198.4/s
+  inserts                            28586           17.3/s
+  removals                           28586           17.3/s
 Counters
-  match                              29575           33.0/s
+  match                              29575           17.9/s
   bad-offset                             0            0.0/s
   fragment                               0            0.0/s
   short                                  0            0.0/s
@@ -48,7 +49,7 @@ Counters
   memory                                 0            0.0/s
   bad-timestamp                          0            0.0/s
   congestion                             0            0.0/s
-  ip-option                            199            0.2/s
+  ip-option                            199            0.1/s
   proto-cksum                            0            0.0/s
   state-mismatch                        89            0.1/s
   state-insert                           0            0.0/s
@@ -358,19 +359,25 @@ pfctl: DIOCGETRULES: Invalid argument
 21678 /Applications/AppStore.app/AppStore
 21679 /Applications/Preferences.app/Preferences
 21680 /var/containers/Bundle/Application/0419B7D1-FEDB-4477-B2EB-4FEA3AC1FB11/YouTube.app/YouTube
-21681 sshd: mobile@ttys000
 21694 /private/preboot/58248FD2F17893A6DD77A7A6F1E3519AFE2F8F69/jb-O0HCUBNE/procursus/Applications/NewTerm.app/NewTerm
 21695 login
 21703 /private/preboot/58248FD2F17893A6DD77A7A6F1E3519AFE2F8F69/jb-O0HCUBNE/procursus/Applications/Filza.app/Filza
 21704 /var/jb/usr/libexec/filza/FilzaHelper
-21708 /System/Library/PrivateFrameworks/MobileBackup.framework/backupd
+21722 /System/Library/Frameworks/AppTrackingTransparency.framework/XPCServices/EnforcementService.xpc/EnforcementServic
+21723 /System/Library/PrivateFrameworks/SafariFoundation.framework/XPCServices/CredentialProviderExtensionHelper.xpc/Cr
+21725 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.Networking.xpc/com.apple.WebKit.Networki
+21726 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
+21727 /private/var/containers/Bundle/Application/A575FF84-35A1-446B-96AC-350619DCB2AD/Opera.app/PlugIns/WireGuard Netwo
+21728 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
+21731 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
+21746 sshd: mobile@ttys000
 14439 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter
-21687 -zsh
-21710 sudo
+21749 -zsh
+21760 sudo
 21696 -zsh
-21712 sudo
-21713 freetether-cli
-21717 /bin/ps
+21761 sudo
+21762 freetether-cli
+21766 /bin/ps
 
 === Recent [FreeTether] logs (last 30 lines) ===
   Run: grep FreeTether /var/log/syslog | tail -30
