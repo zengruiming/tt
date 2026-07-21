@@ -1,15 +1,25 @@
-iPhone:~ root# freetether-cli diagnose 2>&1 | grep -E "bridge|forwarding|pfctl|FreeTether|NAT|utun.*IPv4"
-pfctl: DIOCGETRULES: Invalid argument
-pfctl: DIOCGETRULES: Invalid argument
+iPhone:~ root# cat /var/tmp/ft_diag.txt | grep -E "bridge|forwarding|pfctl -|nat|rules|utun.*IPv4|Status:|VPN|Wi-Fi|Enabled"
+echo "===CC LOG==="; cat /var/tmp/ft_cc.txt | grep -i freetether | head -20
+Status: Enabled for 0 days 00:00:52           Debug: Urgent
+14545 /System/Library/PrivateFrameworks/InstallCoordination.framework/Support/installcoordinationd
+14595 /usr/sbin/filecoordinationd
+14602 /System/Library/PrivateFrameworks/MapsSuggestions.framework/destinationd
+15377 /System/Library/PrivateFrameworks/ContactsDonation.framework/Versions/A/Support/contactsdonationagent
 FreeTether Status:
+  Enabled:              YES
+  VPN Sharing:          YES
+  Wi-Fi Sharing:        NO
   utun3        UP    IPv4   10.0.94.68  (point-to-point)
-  net.inet.ip.forwarding = 0
-  net.inet6.ip6.forwarding = 0
-=== pfctl anchor (com.freetether) ===
+  bridge100    UP    IPv4   172.20.10.1
+  bridge100    UP    IPv6   fe80::58e2:8fff:fea3:da64
+  bridge100    UP    IPv6   2408:8452:47f:bb37:1c32:52a5:6460:663a
+  bridge100    UP    IPv6   2408:8452:47f:bb37:e4ca:ae6a:ba14:4186
+  net.inet.ip.forwarding = 1
+  net.inet6.ip6.forwarding = 1
 --- pfctl -s info ---
 --- pfctl -a com.freetether -s nat ---
 --- pfctl -a com.freetether -s rules ---
-=== Recent [FreeTether] logs (last 30 lines) ===
-  Run: grep FreeTether /var/log/syslog | tail -30
-  Or:  oslog --predicate 'eventMessage CONTAINS "FreeTether"' --last 5m
+  CTServerConnectionSetTetheredModeEnabled           NOT FOUND
+  CTServerConnectionGetTetheredModeEnabled           NOT FOUND
+===CC LOG===
 iPhone:~ root#
