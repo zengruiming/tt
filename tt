@@ -1,39 +1,16 @@
-nat on utun3 inet from bridge100:network to any -> (utun3)
-pass in on bridge100 inet route-to (utun3) from bridge100:network to any
----1---
 pfctl: Use of -f option, could result in flushing of rules
 present in the main ruleset added by the system at startup.
 See /etc/pf.conf for further details.
 
 No ALTQ support in kernel
 ALTQ related functions disabled
-no IP address found for bridge100:network
-/var/tmp/ft_test.conf:1: could not parse host specification
 /var/tmp/ft_test.conf:2: syntax error
 pfctl: Syntax error in config file: pf rules not loaded
 exit=1
+---1---
+No ALTQ support in kernel
+ALTQ related functions disabled
 ---2---
 No ALTQ support in kernel
 ALTQ related functions disabled
-pfctl: DIOCGETRULES: Invalid argument
----3---
-No ALTQ support in kernel
-ALTQ related functions disabled
-pfctl: DIOCGETRULES: Invalid argument
----4---
-pfctl: Use of -f option, could result in flushing of rules
-present in the main ruleset added by the system at startup.
-See /etc/pf.conf for further details.
-
-No ALTQ support in kernel
-ALTQ related functions disabled
-exit=0
----5---
-No ALTQ support in kernel
-ALTQ related functions disabled
-nat-anchor "com.freetether" all
----6---
-No ALTQ support in kernel
-ALTQ related functions disabled
-anchor "com.freetether" all
 iPhone:~ root#
