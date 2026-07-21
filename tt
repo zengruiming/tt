@@ -1,28 +1,11 @@
-[1] 26065 26066
----1---
-[1]  + terminated  oslog -p CommCenter 2>&1 | head -100
-{
-    Filter =     {
-        Executables =         (
-            CommCenter,
-            MobileInternetSharing
-        );
-    };
-}
----2---
-zsh: command not found: xxd
----3---
-zsh: command not found: file
----4---
-lrwxr-xr-x 1 root wheel 32 Jun 11  2024 /var/jb/usr/lib/libsubstrate.dylib -> /var/jb/usr/lib/libellekit.dylib
----5---
-/var/jb/usr/lib/libellekit.dylib
----6---
-BackgrounderActionCore.dylib*  CCSupport.dylib*  FreeTether.dylib*  InjectDylib.dylib*  PreferenceLoader.dylib*
-BackgrounderActionCore.plist   CCSupport.plist   FreeTether.plist   InjectDylib.plist   PreferenceLoader.plist
----7---
----8---
----9---
-BackgrounderActionCore.dylib*  CCSupport.dylib*  FreeTether.dylib*  InjectDylib.dylib*  PreferenceLoader.dylib*
-BackgrounderActionCore.plist   CCSupport.plist   FreeTether.plist   InjectDylib.plist   PreferenceLoader.plist
-iPhone:~ root#
+ echo "=== ElleKit injection check ==="; ls /var/jb/usr/lib/TweakInject.dylib 2>/dev/null; ls /var/jb/usr/lib/ellekit/ 2>/dev/null; echo "---1---"; echo "=== launchd env ==="; launchctl getenv DYLD_INSERT_LIBRARIES 2>/dev/null; echo "---2---"; echo "=== ellekit daemon ==="; ps aux | grep -i ellekit | grep -v grep; echo "---3---"; echo "=== Try capturing CommCenter log realtime ==="; kill -9 $(ps aux | grep '[C]ommCenter$' | sed 's/[^ ]* *//' | sed 's/ .*//'); sleep 1; oslog -p CommCenter --noLevelInfo 2>&1 & LOGPID=$!; sleep 8; kill $LOGPID 2>/dev/null; wait $LOGPID 2>/dev/null; echo "---4---"; echo "=== SpringBoard check (does injection work at all?) ==="; oslog -p SpringBoard 2>&1 & LOGPID2=$!; sleep 3; kill $LOGPID2 2>/dev/null; wait $LOGPID2 2>/dev/null | head -20; echo "---5---"; echo "=== Check inject_criticald ==="; ls /var/jb/usr/bin/inject* 2>/dev/null; ls /var/jb/basebin/ 2>/dev/null
+所在位置 行:1 字符: 512
++ ... 's/ .*//'); sleep 1; oslog -p CommCenter --noLevelInfo 2>&1 & LOGPID= ...
++                                                                 ~
+不允许使用与号(&)。& 运算符是为将来使用而保留的；请用双引号将与号引起来("&")，以将其作为字符串的一部分传递。
+所在位置 行:1 字符: 692
++ ... oes injection work at all?) ==="; oslog -p SpringBoard 2>&1 & LOGPID2 ...
++                                                                 ~
+不允许使用与号(&)。& 运算符是为将来使用而保留的；请用双引号将与号引起来("&")，以将其作为字符串的一部分传递。
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : AmpersandNotAllowed
