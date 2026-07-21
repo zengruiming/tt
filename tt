@@ -4,13 +4,23 @@ See /etc/pf.conf for further details.
 
 No ALTQ support in kernel
 ALTQ related functions disabled
-/var/tmp/ft_test.conf:2: syntax error
-pfctl: Syntax error in config file: pf rules not loaded
-exit=1
+exit=0
 ---1---
 No ALTQ support in kernel
 ALTQ related functions disabled
+nat on utun3 inet from 172.20.10.0/28 to any -> (utun3) round-robin
 ---2---
+pfctl: Use of -f option, could result in flushing of rules
+present in the main ruleset added by the system at startup.
+See /etc/pf.conf for further details.
+
+No ALTQ support in kernel
+ALTQ related functions disabled
+exit=0
+---3---
+No ALTQ support in kernel
+ALTQ related functions disabled
+pass in on bridge100 route-to (utun3 10.0.94.68) inet from 172.20.10.0/28 to any flags S/SA keep state
 No ALTQ support in kernel
 ALTQ related functions disabled
 iPhone:~ root#
