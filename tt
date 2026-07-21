@@ -1,3 +1,30 @@
+_wireless      22898   0.2  2.1 407998304  42368 cu.d  Ss+   5:35AM   0:14.60 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter
+mobile         14469   0.0  0.8 407956160  17440   ??  Ss   Sun04AM   0:04.82 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenterMobileHelper
+---1---
+root           22899   0.0  0.1 407921216   2240   ??  Ss    5:35AM   0:00.12 /usr/libexec/misd
+---2---
+-rwxr-xr-x 1 root wheel 203536 Jul 21 05:24 /var/jb/Library/MobileSubstrate/DynamicLibraries/FreeTether.dylib*
+-rw-r--r-- 1 root wheel    110 Jul 21 05:24 /var/jb/Library/MobileSubstrate/DynamicLibraries/FreeTether.plist
+zsh: no matches found: /Library/MobileSubstrate/DynamicLibraries/FreeTether*
+---3---
+bplist00�VFilter�[Executables�ZCommCenter_MobileInternetSharing
+                                                              !$/G---4---
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+        <key>debugLog</key>
+        <false/>
+        <key>enabled</key>
+        <true/>
+        <key>vpnSharing</key>
+        <true/>
+        <key>wifiSharing</key>
+        <false/>
+</dict>
+</plist>
+---5---
+/var/jb/usr/bin/freetether-cli
 FreeTether Status:
   Enabled:              YES
   VPN Sharing:          YES
@@ -33,11 +60,11 @@ FreeTether Status:
 --- pfctl -s info ---
 No ALTQ support in kernel
 ALTQ related functions disabled
-Status: Disabled for 0 days 20:39:20          Debug: Urgent
+Status: Disabled for 0 days 22:04:44          Debug: Urgent
 
 State Table                          Total             Rate
   current entries                        0
-  searches                          328310            4.4/s
+  searches                          328310            4.1/s
   inserts                            28586            0.4/s
   removals                           28586            0.4/s
 Counters
@@ -357,35 +384,66 @@ pfctl: DIOCGETRULES: Invalid argument
 22227 /usr/libexec/AuthenticationServicesAgent
 22231 /System/Library/PrivateFrameworks/CoreSuggestions.framework/reversetemplated
 22270 /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/DesktopServicesHelper
-22501 /usr/libexec/backboardd
-22512 /System/Library/PrivateFrameworks/CoreAccessories.framework/XPCServices/ACCHWComponentAuthService.xpc/ACCHWCompon
-22513 /System/Library/CoreServices/SpringBoard.app/SpringBoard
-22533 /System/Library/PrivateFrameworks/WallpaperKit.framework/XPCServices/WallpaperMigrator.xpc/WallpaperMigrator
-22535 /System/Library/PrivateFrameworks/AccessibilityUI.framework/XPCServices/com.apple.accessibility.AccessibilityUISe
-22537 /Applications/Spotlight.app/Spotlight
-22868 /private/preboot/58248FD2F17893A6DD77A7A6F1E3519AFE2F8F69/jb-O0HCUBNE/procursus/Applications/NewTerm.app/NewTerm
-22869 login
 22899 /usr/libexec/misd
-22911 /Applications/CTNotifyUIService.app/CTNotifyUIService
-22918 /System/Library/Frameworks/Metal.framework/XPCServices/MTLCompilerService.xpc/MTLCompilerService
-22931 /Applications/Preferences.app/Preferences
-22947 /var/containers/Bundle/Application/A575FF84-35A1-446B-96AC-350619DCB2AD/Opera.app/Opera
-22948 /System/Library/Frameworks/AppTrackingTransparency.framework/XPCServices/EnforcementService.xpc/EnforcementServic
-22949 /System/Library/PrivateFrameworks/SafariFoundation.framework/XPCServices/CredentialProviderExtensionHelper.xpc/Cr
-22951 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.Networking.xpc/com.apple.WebKit.Networki
-22952 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
-22953 /private/var/containers/Bundle/Application/A575FF84-35A1-446B-96AC-350619DCB2AD/Opera.app/PlugIns/WireGuard Netwo
-22955 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
-22956 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
-22962 sshd: mobile@ttys001
+23194 /System/Library/PrivateFrameworks/BarcodeSupport.framework/com.apple.BarcodeSupport.BarcodeNotificationService
+23951 /usr/libexec/backboardd
+23952 /System/Library/PrivateFrameworks/CoreAccessories.framework/XPCServices/ACCHWComponentAuthService.xpc/ACCHWCompon
+23954 /System/Library/CoreServices/SpringBoard.app/SpringBoard
+23963 /System/Library/PrivateFrameworks/WallpaperKit.framework/XPCServices/WallpaperMigrator.xpc/WallpaperMigrator
+23983 /Applications/Spotlight.app/Spotlight
+23984 /var/containers/Bundle/Application/A575FF84-35A1-446B-96AC-350619DCB2AD/Opera.app/Opera
+23985 /System/Library/Frameworks/AppTrackingTransparency.framework/XPCServices/EnforcementService.xpc/EnforcementServic
+23986 /System/Library/PrivateFrameworks/SafariFoundation.framework/XPCServices/CredentialProviderExtensionHelper.xpc/Cr
+23988 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.Networking.xpc/com.apple.WebKit.Networki
+23989 /private/var/containers/Bundle/Application/A575FF84-35A1-446B-96AC-350619DCB2AD/Opera.app/PlugIns/WireGuard Netwo
+23990 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
+23991 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
+23993 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
+24025 /var/containers/Bundle/Application/16F7B0C1-C4E3-4DF9-88B9-D6058B7D5E53/GitHub.app/GitHub
+24030 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
+24031 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
+24032 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.Networking.xpc/com.apple.WebKit.Networki
+24033 /System/Library/Frameworks/Metal.framework/XPCServices/MTLCompilerService.xpc/MTLCompilerService
+24035 /System/Library/Frameworks/Metal.framework/XPCServices/MTLCompilerService.xpc/MTLCompilerService
+24043 /private/var/containers/Bundle/Application/5DFE1DE0-6EE0-4F63-A21E-28F4B66AD7A1/Stocks.app/PlugIns/StocksWidget.a
+24500 /System/Library/PrivateFrameworks/AccessibilityUI.framework/XPCServices/com.apple.accessibility.AccessibilityUISe
+24510 /Applications/Preferences.app/Preferences
+24511 /private/preboot/58248FD2F17893A6DD77A7A6F1E3519AFE2F8F69/jb-O0HCUBNE/procursus/Applications/Filza.app/Filza
+24512 /Applications/MobileSMS.app/MobileSMS
+24513 /Applications/MobileSafari.app/MobileSafari
+24514 /private/preboot/58248FD2F17893A6DD77A7A6F1E3519AFE2F8F69/jb-O0HCUBNE/procursus/Applications/Zebra.app/Zebra
+24515 /Applications/AppStore.app/AppStore
+24607 /private/preboot/58248FD2F17893A6DD77A7A6F1E3519AFE2F8F69/jb-O0HCUBNE/procursus/Applications/Sileo.app/Sileo
+25109 sshd: mobile@ttys000
+25662 /System/Library/PrivateFrameworks/MobileBackup.framework/backupd
 22898 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter
-22870 -zsh
-22965 -zsh
-22972 sudo
-22973 sudo
-22974 freetether-cli
-22978 /bin/ps
+25111 -zsh
+25147 sudo
+25148 sudo
+25149 -zsh
+25674 freetether-cli
+25678 /bin/ps
 
 === Recent [FreeTether] logs (last 30 lines) ===
   Run: grep FreeTether /var/log/syslog | tail -30
   Or:  oslog --predicate 'eventMessage CONTAINS "FreeTether"' --last 5m
+---6---
+No ALTQ support in kernel
+ALTQ related functions disabled
+Status: Disabled for 0 days 22:04:44          Debug: Urgent
+
+State Table                          Total             Rate
+---7---
+No ALTQ support in kernel
+ALTQ related functions disabled
+pfctl: DIOCGETRULES: Invalid argument
+---8---
+No ALTQ support in kernel
+ALTQ related functions disabled
+pfctl: DIOCGETRULES: Invalid argument
+---9---
+net.inet.ip.forwarding: 0
+net.inet6.ip6.forwarding: 0
+---10---
+no ip/networkctl/ifconfig available
+iPhone:~ root#
