@@ -1,84 +1,22 @@
-Darwin iPhone 21.6.0 Darwin Kernel Version 21.6.0: Fri Mar  6 21:01:24 PST 2026; root:xnu-8020.241.44~1/RELEASE_ARM64_S8000 iPhone8,4 arm Darwin
----A---
+=== iOS Version ===
 ProductName:    iPhone OS
 ProductVersion: 15.8.8
 BuildVersion:   19H422
+---A---
+=== Debug logging ===
+Set debugLog = 1
 ---B---
----C---
----D---
-log: too many arguments
----E---
-log: too many arguments
----F---
-/System/Library/Frameworks/CoreTelephony.framework/de.lproj/InfoPlist~iphone.strings
-/System/Library/Frameworks/CoreTelephony.framework/de.lproj/InfoPlist~applewatch.strings
-/System/Library/Frameworks/CoreTelephony.framework/de.lproj/CBMessage.strings
-/System/Library/Frameworks/CoreTelephony.framework/he.lproj/InfoPlist~iphone.strings
-/System/Library/Frameworks/CoreTelephony.framework/he.lproj/InfoPlist~applewatch.strings
-/System/Library/Frameworks/CoreTelephony.framework/he.lproj/CBMessage.strings
-/System/Library/Frameworks/CoreTelephony.framework/ar.lproj/InfoPlist~iphone.strings
-/System/Library/Frameworks/CoreTelephony.framework/ar.lproj/InfoPlist~applewatch.strings
-/System/Library/Frameworks/CoreTelephony.framework/ar.lproj/CBMessage.strings
-/System/Library/Frameworks/CoreTelephony.framework/el.lproj/InfoPlist~iphone.strings
-/System/Library/Frameworks/CoreTelephony.framework/el.lproj/InfoPlist~applewatch.strings
-/System/Library/Frameworks/CoreTelephony.framework/el.lproj/CBMessage.strings
-/System/Library/Frameworks/CoreTelephony.framework/ja.lproj/InfoPlist~iphone.strings
-/System/Library/Frameworks/CoreTelephony.framework/ja.lproj/InfoPlist~applewatch.strings
-/System/Library/Frameworks/CoreTelephony.framework/ja.lproj/CBMessage.strings
-/System/Library/Frameworks/CoreTelephony.framework/PlugIns/CTFollowUpExtension.appex/_CodeSignature/CodeResources
-/System/Library/Frameworks/CoreTelephony.framework/PlugIns/CTFollowUpExtension.appex/Entitlements.plist
-/System/Library/Frameworks/CoreTelephony.framework/PlugIns/CTFollowUpExtension.appex/Info.plist
-/System/Library/Frameworks/CoreTelephony.framework/PlugIns/CTFollowUpExtension.appex/CTFollowUpExtension
-/System/Library/Frameworks/CoreTelephony.framework/en.lproj/InfoPlist~iphone.strings
----G---
-total 10756
-drwxr-xr-x 16 root wheel      512 Apr 29 22:09 ./
-drwxr-xr-x 45 root wheel     1440 Apr 29 22:09 ../
--rwxr-xr-x  1 root wheel 23448384 Apr 29 22:09 CommCenter*
--rwxr-xr-x  1 root wheel   388576 Apr 29 22:09 CommCenterMobileHelper*
--rwxr-xr-x  1 root wheel    78368 Apr 29 22:09 CommCenterRootHelper*
--rwxr-xr-x  1 root wheel   155952 Apr 29 22:09 DMHelper*
--rw-r--r--  1 root wheel       77 Apr 29 22:09 SE13Overrides.plist
--rw-r--r--  1 root wheel       62 Apr 29 22:09 TextToBinaryMap.plist
--rw-r--r--  1 root wheel     1492 Apr 29 22:09 default_tech.plist
--rw-r--r--  1 root wheel  2058240 Apr 29 22:09 lasdcdma.db
--rw-r--r--  1 root wheel   882688 Apr 29 22:09 lasdgsm.db
--rw-r--r--  1 root wheel   154624 Apr 29 22:09 lasdlte.db
--rw-r--r--  1 root wheel     9216 Apr 29 22:09 lasdnr.db
--rw-r--r--  1 root wheel   835584 Apr 29 22:09 lasdscdma.db
--rw-r--r--  1 root wheel  4203520 Apr 29 22:09 lasdumts.db
--rw-r--r--  1 root wheel      802 Apr 29 22:09 tech_config.plist
----H---
----I---
+=== Killing CommCenter to force reload ===
 zsh: command not found: awk
-CommCenter PID:
-no /proc
----J---
-{
-        "EnableTransactions" = true;
-        "LimitLoadToSessionType" = "System";
-        "MachServices" = {
-                "com.apple.basebandd.xpc" = mach-port-object;
-                "com.apple.commcenter.xpc" = mach-port-object;
-                "com.apple.commcenter.mobile-helper-cbupdateservice" = mach-port-object;
-                "com.apple.CoreTelephony.powerlog-Lite.LogChannel" = mach-port-object;
-                "com.apple.aps.CommCenter" = mach-port-object;
-                "com.apple.commcenter.atcs.xpc" = mach-port-object;
-                "com.apple.ipTelephony" = mach-port-object;
-                "com.apple.CellularPlanDaemon.xpc" = mach-port-object;
-                "com.apple.commcenter.ari.rt.xpc" = mach-port-object;
-                "com.apple.commcenter.carrierspace.xpc" = mach-port-object;
-                "com.apple.usernotifications.delegate.com.apple.SIMSetupUIService" = mach-port-object;
-                "com.apple.commcenter.coretelephony.xpc" = mach-port-object;
-                "com.apple.commcenter.cupolicy.xpc" = mach-port-object;
-        };
-        "Label" = "com.apple.CommCenter";
-        "OnDemand" = false;
-        "LastExitStatus" = 9;
-        "PID" = 22898;
-        "Program" = "/System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter";
-        "ProgramArguments" = (
-                "/System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter";
-        );
-};
+kill: not enough arguments
+CommCenter restarted, PID:
+zsh: command not found: awk
+---C---
+=== FreeTether logs ===
+log: too many arguments
+---D---
+=== CommCenter substrate logs ===
+---E---
+=== Check dylib load ===
+log: too many arguments
 iPhone:~ root#
