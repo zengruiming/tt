@@ -1,22 +1,12 @@
-=== iOS Version ===
-ProductName:    iPhone OS
-ProductVersion: 15.8.8
-BuildVersion:   19H422
----A---
-=== Debug logging ===
-Set debugLog = 1
----B---
-=== Killing CommCenter to force reload ===
-zsh: command not found: awk
+_wireless      25917   0.0  2.8 408003024  57472 cu.d  Ss+   7:18AM   0:03.35 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter
+---1---
 kill: not enough arguments
-CommCenter restarted, PID:
-zsh: command not found: awk
----C---
-=== FreeTether logs ===
-log: too many arguments
----D---
-=== CommCenter substrate logs ===
----E---
-=== Check dylib load ===
-log: too many arguments
+_wireless      25917   0.0  2.8 408003024  57472 cu.d  Ss+   7:18AM   0:03.35 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter
+---2---
+---3---
+---4---
+zsh: no matches found: /var/tmp/FTProbe/*.txt
+---5---
+---6---
+zsh: no matches found: /var/tmp/freetether*
 iPhone:~ root#
