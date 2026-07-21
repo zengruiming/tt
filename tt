@@ -1,449 +1,84 @@
-_wireless      22898   0.2  2.1 407998304  42368 cu.d  Ss+   5:35AM   0:14.60 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter
-mobile         14469   0.0  0.8 407956160  17440   ??  Ss   Sun04AM   0:04.82 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenterMobileHelper
----1---
-root           22899   0.0  0.1 407921216   2240   ??  Ss    5:35AM   0:00.12 /usr/libexec/misd
----2---
--rwxr-xr-x 1 root wheel 203536 Jul 21 05:24 /var/jb/Library/MobileSubstrate/DynamicLibraries/FreeTether.dylib*
--rw-r--r-- 1 root wheel    110 Jul 21 05:24 /var/jb/Library/MobileSubstrate/DynamicLibraries/FreeTether.plist
-zsh: no matches found: /Library/MobileSubstrate/DynamicLibraries/FreeTether*
----3---
-bplist00�VFilter�[Executables�ZCommCenter_MobileInternetSharing
-                                                              !$/G---4---
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-        <key>debugLog</key>
-        <false/>
-        <key>enabled</key>
-        <true/>
-        <key>vpnSharing</key>
-        <true/>
-        <key>wifiSharing</key>
-        <false/>
-</dict>
-</plist>
----5---
-/var/jb/usr/bin/freetether-cli
-FreeTether Status:
-  Enabled:              YES
-  VPN Sharing:          YES
-  Wi-Fi Sharing:        NO
-  Debug Log:            NO
-
-  Prefs file: /var/mobile/Library/Preferences/com.freetether.plist
-
-=== Network Interfaces ===
-  pdp_ip0      UP    IPv4   10.72.116.198  (point-to-point)
-  pdp_ip0      UP    IPv6   fe80::14d7:8783:6b65:4244  (point-to-point)
-  pdp_ip0      UP    IPv6   2408:8452:4a7:6dc0:18bc:987b:2cc8:cd8f  (point-to-point)
-  pdp_ip0      UP    IPv6   2408:8452:4a7:6dc0:5ce1:149a:c07e:7611  (point-to-point)
-  pdp_ip1      UP    IPv6   fe80::876:f3d7:88e:2459  (point-to-point)
-  pdp_ip1      UP    IPv6   2408:8553:4a7:8a42:4f:9f42:5263:167f  (point-to-point)
-  pdp_ip1      UP    IPv6   2408:8553:4a7:8a42:95d:85ac:45fb:ae72  (point-to-point)
-  en0          UP    IPv6   fe80::3d:f544:69f:400d
-  en0          UP    IPv4   192.168.0.110
-  utun0        UP    IPv6   fe80::326c:aa36:7a09:a0d9  (point-to-point)
-  utun1        UP    IPv6   fe80::cc0a:8321:f4cc:9721  (point-to-point)
-  utun2        UP    IPv6   fe80::ce81:b1c:bd2c:69e  (point-to-point)
-  ipsec0       UP    IPv6   fe80::94f2:142c:bb71:1918  (point-to-point)
-  ipsec0       UP    IPv6   2408:8553:4a7:8a42:4f:9f42:5263:167f  (point-to-point)
-  ipsec1       UP    IPv6   fe80::94f2:142c:bb71:1918  (point-to-point)
-  ipsec1       UP    IPv6   2408:8553:4a7:8a42:4f:9f42:5263:167f  (point-to-point)
-  utun3        UP    IPv4   10.0.94.68  (point-to-point)
-
-=== IP Forwarding ===
-  net.inet.ip.forwarding = 0
-  net.inet6.ip6.forwarding = 0
-
-=== pfctl anchor (com.freetether) ===
---- pfctl -s info ---
-No ALTQ support in kernel
-ALTQ related functions disabled
-Status: Disabled for 0 days 22:04:44          Debug: Urgent
-
-State Table                          Total             Rate
-  current entries                        0
-  searches                          328310            4.1/s
-  inserts                            28586            0.4/s
-  removals                           28586            0.4/s
-Counters
-  match                              29575            0.4/s
-  bad-offset                             0            0.0/s
-  fragment                               0            0.0/s
-  short                                  0            0.0/s
-  normalize                              0            0.0/s
-  memory                                 0            0.0/s
-  bad-timestamp                          0            0.0/s
-  congestion                             0            0.0/s
-  ip-option                            199            0.0/s
-  proto-cksum                            0            0.0/s
-  state-mismatch                        89            0.0/s
-  state-insert                           0            0.0/s
-  state-limit                            0            0.0/s
-  src-limit                              0            0.0/s
-  synproxy                               0            0.0/s
-  dummynet                               0            0.0/s
-  invalid-port                           0            0.0/s
-
---- pfctl -a com.freetether -s nat ---
-No ALTQ support in kernel
-ALTQ related functions disabled
-pfctl: DIOCGETRULES: Invalid argument
-
---- pfctl -a com.freetether -s rules ---
-No ALTQ support in kernel
-ALTQ related functions disabled
-pfctl: DIOCGETRULES: Invalid argument
-
-=== Tether-related Symbols ===
-  CTCarrierSpaceGetSetting                           NOT FOUND
-  CTCarrierSpaceSetSetting                           NOT FOUND
-  CTServerConnectionSetTetheredModeEnabled           NOT FOUND
-  CTServerConnectionGetTetheredModeEnabled           NOT FOUND
-  CTRegistrationGetCarrierBundleInfo                 NOT FOUND
-  CTRegistrationGetDataStatus                        NOT FOUND
-  CTServerConnectionSetPersistentTetheringAPN        NOT FOUND
-
-=== Process Check ===
---- Running daemons ---
-  PID COMM
-    1 /sbin/launchd
-14378 /usr/libexec/UserEventAgent
-14379 /usr/libexec/logd
-14380 /System/Library/PrivateFrameworks/AssistantServices.framework/assistantd
-14381 /usr/libexec/runningboardd
-14382 /System/Library/PrivateFrameworks/People.framework/peopled
-14383 /usr/libexec/fseventsd
-14384 /usr/sbin/mediaserverd
-14385 /System/Library/PrivateFrameworks/MediaRemote.framework/Support/mediaremoted
-14386 /usr/libexec/routined
-14389 /usr/libexec/configd
-14390 /System/Library/Frameworks/HealthKit.framework/healthd
-14392 /System/Library/CoreServices/powerd.bundle/powerd
-14393 /System/Library/PrivateFrameworks/TCC.framework/Support/tccd
-14394 /usr/libexec/atc
-14395 /usr/sbin/WirelessRadioManagerd
-14396 /System/Library/PrivateFrameworks/BiomeStreams.framework/Support/biomed
-14397 /usr/libexec/keybagd
-14398 /usr/libexec/remoted
-14400 /System/Library/PrivateFrameworks/FamilyNotification.framework/familynotificationd
-14401 /usr/sbin/wifid
-14402 /System/Library/PrivateFrameworks/MobileSoftwareUpdate.framework/Support/softwareupdated
-14403 /System/Library/PrivateFrameworks/MobileTimer.framework/Executables/mobiletimerd
-14404 /usr/libexec/seld
-14405 /System/Library/PrivateFrameworks/IDS.framework/identityservicesd.app/identityservicesd
-14406 /usr/libexec/watchdogd
-14408 /usr/libexec/nfcd
-14409 /usr/libexec/wcd
-14410 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored
-14412 /usr/libexec/thermalmonitord
-14413 /System/Library/PrivateFrameworks/AskPermission.framework/Support/askpermissiond
-14415 /usr/libexec/sharingd
-14416 /System/Library/Frameworks/ManagedSettings.framework/ManagedSettingsAgent
-14417 /usr/libexec/timed
-14418 /usr/libexec/locationd
-14419 /usr/libexec/cloudpaird
-14420 /usr/libexec/containermanagerd
-14421 /System/Library/PrivateFrameworks/IMCore.framework/imagent.app/imagent
-14422 /System/Library/PrivateFrameworks/NanoPreferencesSync.framework/nanoprefsyncd
-14423 /usr/libexec/driverkitd
-14424 /usr/libexec/lockdownd
-14425 /System/Library/PrivateFrameworks/SleepDaemon.framework/sleepd
-14427 OTACrashCopier
-14428 /usr/sbin/distnoted
-14430 /System/Library/PrivateFrameworks/AppleCredentialManager.framework/AppleCredentialManagerDaemon
-14431 /System/Library/PrivateFrameworks/MapsSupport.framework/navd
-14433 /usr/sbin/notifyd
-14434 /usr/libexec/rapportd
-14435 /usr/sbin/bluetoothd
-14437 /System/Library/PrivateFrameworks/AppleMediaServices.framework/amsaccountsd
-14438 /usr/sbin/fairplayd.H2
-14441 /usr/sbin/cfprefsd
-14443 /System/Library/Frameworks/Security.framework/CloudKeychainProxy.bundle/CloudKeychainProxy
-14444 /System/Library/PrivateFrameworks/ChronoCore.framework/Support/chronod
-14445 /usr/libexec/biometrickitd
-14446 /System/Library/PrivateFrameworks/AuthKit.framework/akd
-14447 /usr/libexec/lsd
-14448 /System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Support/awdd
-14449 /usr/libexec/PowerUIAgent
-14451 /usr/libexec/dasd
-14453 /usr/libexec/nanoregistryd
-14454 /System/Library/PrivateFrameworks/CarKit.framework/Support/carkitd
-14455 /System/Library/PrivateFrameworks/GeoServices.framework/geod
-14456 /usr/libexec/mobileassetd
-14457 /usr/libexec/coreduetd
-14458 /usr/libexec/dmd
-14459 /usr/sbin/mDNSResponder
-14460 /System/Library/PrivateFrameworks/CoreAnalytics.framework/Support/analyticsd
-14461 /usr/libexec/misagent
-14463 /usr/libexec/mobileactivationd
-14464 /usr/libexec/nehelper
-14465 /usr/libexec/trustd
-14466 /System/Library/PrivateFrameworks/ApplePushService.framework/apsd
-14467 /System/Library/Frameworks/Accounts.framework/accountsd
-14468 /System/Library/PrivateFrameworks/CloudKitDaemon.framework/Support/cloudd
-14469 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenterMobileHelper
-14470 /System/Library/PrivateFrameworks/TelephonyUtilities.framework/callservicesd
-14471 /usr/libexec/pfd
-14472 /System/Library/PrivateFrameworks/CacheDelete.framework/deleted
-14473 /usr/libexec/securityd
-14474 /usr/libexec/networkserviceproxy
-14475 /System/Library/PrivateFrameworks/IntlPreferences.framework/Support/localizationswitcherd
-14476 /usr/libexec/pkd
-14477 /System/Library/PrivateFrameworks/CoreSpeech.framework/corespeechd
-14478 /usr/sbin/BlueTool
-14479 /usr/libexec/findmydeviced
-14480 /System/Library/PrivateFrameworks/TouchRemote.framework/Support/touchsetupd
-14481 /System/Library/Frameworks/AudioToolbox.framework/XPCServices/CAReportingService.xpc/CAReportingService
-14482 /usr/libexec/seserviced
-14484 /System/Library/PrivateFrameworks/PassKitCore.framework/passd
-14485 /System/Library/DriverExtensions/com.apple.AppleUserHIDDrivers.dext/com.apple.AppleUserHIDDrivers
-14486 /usr/libexec/mobilerepaird
-14487 /usr/libexec/MobileGestaltHelper
-14488 /System/Library/PrivateFrameworks/CoreFollowUp.framework/followupd
-14489 /usr/libexec/ospredictiond
-14490 /System/Library/PrivateFrameworks/WiFiPolicy.framework/XPCServices/WiFiCloudAssetsXPCService.xpc/WiFiCloudAssetsX
-14491 /usr/libexec/nearbyd
-14492 /usr/libexec/searchpartyd
-14493 /System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd
-14494 /System/Library/Frameworks/CryptoTokenKit.framework/ctkd
-14495 /usr/libexec/symptomsd
-14496 /usr/libexec/nsurlsessiond
-14497 /usr/libexec/profiled
-14499 /System/Library/PrivateFrameworks/DoNotDisturbServer.framework/Support/donotdisturbd
-14500 /System/Library/PrivateFrameworks/MusicLibrary.framework/Support/medialibraryd
-14501 /usr/libexec/fmflocatord
-14502 /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/nanotimekitcompaniond
-14504 /usr/libexec/wifianalyticsd
-14505 /System/Library/Frameworks/LocalAuthentication.framework/Support/coreauthd
-14506 /System/Library/PrivateFrameworks/IMDPersistence.framework/XPCServices/IMDPersistenceAgent.xpc/IMDPersistenceAgen
-14507 /System/Library/PrivateFrameworks/WatchListKit.framework/Support/watchlistd
-14509 /usr/libexec/coreidvd
-14510 /System/Library/PrivateFrameworks/iTunesCloud.framework/Support/itunescloudd
-14511 /System/Library/PrivateFrameworks/AppStoreDaemon.framework/Support/appstored
-14512 /usr/libexec/languageassetd
-14513 /System/Library/CoreServices/iconservicesagent
-14514 /System/Library/PrivateFrameworks/FamilyCircle.framework/familycircled
-14515 /System/Library/PrivateFrameworks/ScreenTimeCore.framework/ScreenTimeAgent
-14516 /System/Library/PrivateFrameworks/TelephonyUtilities.framework/XPCServices/com.apple.FaceTime.FTConversationServi
-14517 /System/Library/Frameworks/Contacts.framework/Support/contactsd
-14518 /System/Library/PrivateFrameworks/UserActivity.framework/Agents/useractivityd
-14519 /System/Library/PrivateFrameworks/VisualVoicemail.framework/vmd
-14521 /usr/libexec/duetexpertd
-14522 /System/Library/CoreServices/ReportCrash
-14524 /System/Library/PrivateFrameworks/CoreSymbolication.framework/coresymbolicationd
-14525 /System/Library/Frameworks/CallKit.framework/XPCServices/com.apple.CallKit.CallDirectoryMaintenance.xpc/com.apple
-14526 /usr/libexec/webbookmarksd
-14527 /System/Library/PrivateFrameworks/CalendarDaemon.framework/Support/calaccessd
-14528 /usr/libexec/fmfd
-14530 /usr/libexec/videosubscriptionsd
-14532 /System/Library/PrivateFrameworks/CoreCDP.framework/cdpd
-14533 /System/Library/PrivateFrameworks/ProtectedCloudStorage.framework/Helpers/ProtectedCloudKeySyncing
-14536 /System/Library/Frameworks/ClassKit.framework/progressd
-14537 /System/Library/Frameworks/VideoSubscriberAccount.framework/XPCServices/com.apple.VideoSubscriberAccount.Develope
-14538 /System/Library/PrivateFrameworks/AppSSO.framework/Support/AppSSODaemon
-14539 /System/Library/Frameworks/GSS.framework/Helpers/GSSCred
-14541 /System/Library/PrivateFrameworks/iTunesStore.framework/Support/itunesstored
-14542 /System/Library/PrivateFrameworks/BookLibraryCore.framework/Support/bookassetd
-14543 /usr/libexec/adid
-14544 /System/Library/PrivateFrameworks/PrivacyAccounting.framework/Versions/A/Resources/privacyaccountingd
-14545 /System/Library/PrivateFrameworks/InstallCoordination.framework/Support/installcoordinationd
-14546 /System/Library/PrivateFrameworks/VoiceShortcuts.framework/Support/siriactionsd
-14547 /System/Library/PrivateFrameworks/TVRemoteCore.framework/Support/TVRemoteConnectionService
-14548 /usr/libexec/siriknowledged
-14549 /System/Library/Frameworks/FamilyControls.framework/FamilyControlsAgent
-14550 /System/Library/PrivateFrameworks/SiriInference.framework/Support/siriinferenced
-14551 /System/Library/PrivateFrameworks/ClipServices.framework/clipserviced
-14552 /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/bird
-14553 /System/Library/PrivateFrameworks/CoreSuggestions.framework/suggestd
-14554 /usr/libexec/online-auth-agent
-14555 /usr/libexec/swcd
-14556 /System/Library/PrivateFrameworks/iCloudNotification.framework/ind
-14557 /usr/libexec/announced
-14558 /System/Library/PrivateFrameworks/WiFiPolicy.framework/XPCServices/ThreeBarsXPCService.xpc/ThreeBarsXPCService
-14559 /System/Library/PrivateFrameworks/ContextKit.framework/XPCServices/ContextService.xpc/ContextService
-14560 /System/Library/PrivateFrameworks/AXAssetLoader.framework/Support/axassetsd
-14561 /usr/libexec/triald
-14562 /System/Library/PrivateFrameworks/WiFiPolicy.framework/XPCServices/WiFiCloudAssetsXPCService.xpc/WiFiCloudAssetsX
-14563 /System/Library/PrivateFrameworks/CoreEmbeddedSpeechRecognition.framework/XPCServices/com.apple.siri.embeddedspee
-14564 /System/Library/PrivateFrameworks/StatusKit.framework/StatusKitAgent
-14565 /usr/libexec/captiveagent
-14566 /System/Library/PrivateFrameworks/HomeKitDaemon.framework/Support/homed
-14567 /System/Library/PrivateFrameworks/CloudKitDaemon.framework/Support/ckdiscretionaryd
-14568 /usr/libexec/nesessionmanager
-14569 /usr/libexec/splashboardd
-14570 /System/Library/PrivateFrameworks/VoiceServices.framework/Support/voiced
-14571 /System/Library/CoreServices/osanalyticshelper
-14572 /System/Library/PrivateFrameworks/AppleMediaServicesUI.framework/amsengagementd
-14573 /usr/libexec/wifip2pd
-14574 /usr/libexec/promotedcontentd
-14576 /System/Library/PrivateFrameworks/MapsSupport.framework/mapspushd
-14577 /System/Library/Frameworks/FileProvider.framework/Support/fileproviderd
-14579 /System/Library/PrivateFrameworks/SOS.framework/sosd
-14580 /System/Library/PrivateFrameworks/Search.framework/searchd
-14581 /usr/libexec/symptomsd-diag
-14582 /usr/libexec/mmaintenanced
-14584 /usr/libexec/rtcreportingd
-14585 /usr/libexec/nanoregistrylaunchd
-14592 /System/Library/PrivateFrameworks/CoreParsec.framework/parsecd
-14593 /System/Library/PrivateFrameworks/AppPredictionFoundation.framework/XPCServices/AppPredictionIntentsHelperService
-14594 assetsd
-14595 /usr/sbin/filecoordinationd
-14596 /System/Library/PrivateFrameworks/WiFiPolicy.framework/XPCServices/WiFiCloudAssetsXPCService.xpc/WiFiCloudAssetsX
-14601 /System/Library/PrivateFrameworks/MobileSoftwareUpdate.framework/XPCServices/com.apple.MobileSoftwareUpdate.Clean
-14602 /System/Library/PrivateFrameworks/MapsSuggestions.framework/destinationd
-14604 /System/Library/PrivateFrameworks/CloudServices.framework/Helpers/com.apple.sbd
-14610 /System/Library/PrivateFrameworks/Pasteboard.framework/Support/pasted
-14611 /System/Library/PrivateFrameworks/ActionPredictionHeuristics.framework/XPCServices/HeuristicInterpreter.xpc/Heuri
-14612 /usr/libexec/asd
-14613 /usr/libexec/OTATaskingAgent
-14615 /System/Library/PrivateFrameworks/FontServices.framework/Support/fontservicesd
-14616 /System/Library/PrivateFrameworks/FontServices.framework/XPCServices/com.apple.FontServices.UserFontManager.xpc/c
-14620 /System/Library/PrivateFrameworks/UsageTracking.framework/UsageTrackingAgent
-14621 /System/Library/PrivateFrameworks/NewDeviceOutreach.framework/ndoagent
-14623 /System/Library/PrivateFrameworks/EmailDaemon.framework/maild
-14624 /usr/libexec/diagnosticextensionsd
-14625 /System/Library/PrivateFrameworks/CommunicationsFilter.framework/CMFSyncAgent
-14626 /usr/libexec/adprivacyd
-14637 /System/Library/PrivateFrameworks/WeatherDaemon.framework/weatherd
-14972 /System/Library/Frameworks/Metal.framework/XPCServices/MTLCompilerService.xpc/MTLCompilerService
-14973 /System/Library/Frameworks/Metal.framework/XPCServices/MTLCompilerService.xpc/MTLCompilerService
-14980 /System/Library/PrivateFrameworks/SharingXPCServices.framework/XPCServices/SharingXPCHelper.xpc/SharingXPCHelper
-15037 /System/Library/PrivateFrameworks/DictionaryServices.framework/XPCServices/com.apple.DictionaryServiceHelper.xpc/
-15376 /System/Library/TextInput/kbd
-15377 /System/Library/PrivateFrameworks/ContactsDonation.framework/Versions/A/Support/contactsdonationagent
-15774 /System/Library/PrivateFrameworks/DataAccess.framework/Support/dataaccessd
-15775 /usr/libexec/passwordbreachd
-15776 /usr/libexec/mlruntimed
-15777 /System/Library/CoreServices/SafariSupport.bundle/SafariBookmarksSyncAgent
-15779 /usr/libexec/metrickitd
-15784 /usr/libexec/logd_helper
-15786 /System/Library/Frameworks/MapKit.framework/XPCServices/com.apple.MapKit.SnapshotService.xpc/com.apple.MapKit.Sna
-15787 /usr/libexec/ASPCarryLog
-15796 /usr/libexec/dprivacyd
-15801 /System/Library/Frameworks/AppTrackingTransparency.framework/XPCServices/EnforcementService.xpc/EnforcementServic
-15805 /System/Library/Frameworks/MediaAccessibility.framework/XPCServices/com.apple.accessibility.mediaaccessibilityd.x
-15806 /usr/libexec/neagent
-15807 /System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/com.apple.Safari.SafeBrowsing.Service
-15810 /System/Library/PrivateFrameworks/DeviceCheckInternal.framework/devicecheckd
-15825 /cores/binpack/usr/sbin/palera1nd
-15923 /System/Library/PrivateFrameworks/ExtensionFoundation.framework/XPCServices/extensionkitservice.xpc/extensionkits
-16091 /usr/libexec/proactiveeventtrackerd
-16163 /usr/libexec/biomesyncd
-16206 /usr/libexec/FSTaskScheduler
-16213 /usr/libexec/transparencyd
-16286 /System/Library/CoreServices/EscrowSecurityAlert.app/EscrowSecurityAlert
-16287 /System/Library/PrivateFrameworks/HealthRecordServices.framework/healthrecordsd
-16294 /System/Library/PrivateFrameworks/DistributedEvaluation.framework/XPCServices/com.apple.siri-distributed-evaluati
-16300 /System/Library/PrivateFrameworks/CacheDelete.framework/deleted_helper
-16301 /usr/libexec/tailspind
-16302 /usr/libexec/replayd
-16303 /System/Library/CoreServices/CacheDeleteAppContainerCaches
-16305 /usr/libexec/sensorkitd
-16306 /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackupCacheDeleteService
-16307 /System/Library/Frameworks/QuickLookThumbnailing.framework/Support/com.apple.quicklook.ThumbnailsAgent
-16309 /System/Library/PrivateFrameworks/Translation.framework/translationd
-16324 /System/Library/PrivateFrameworks/CoreAccessories.framework/Support/accessoryd
-16328 /System/Library/PrivateFrameworks/HealthPluginHost.framework/healthappd
-16329 /usr/libexec/idcredd
-16334 /System/Library/PrivateFrameworks/FinHealth.framework/XPCServices/FinHealthXPCServices.xpc/FinHealthXPCServices
-16341 /System/Library/PrivateFrameworks/AggregateDictionary.framework/Support/aggregated
-16344 /System/Library/PrivateFrameworks/AssetCacheServices.framework/XPCServices/AssetCacheLocatorService.xpc/AssetCach
-16347 /System/Library/PrivateFrameworks/SetupAssistant.framework/budd
-16582 /usr/libexec/mediasetupd
-16594 /usr/libexec/gamecontrollerd
-17416 /usr/libexec/tipsd
-17421 /System/Library/PrivateFrameworks/BusinessChatService.framework/businessservicesd
-17423 /System/Library/PrivateFrameworks/MapsSupport.framework/geocorrectiond
-17427 /System/Library/PrivateFrameworks/DifferentialPrivacy.framework/XPCServices/DPSubmissionService.xpc/DPSubmissionS
-17429 /System/Library/PrivateFrameworks/Categories.framework/XPCServices/CategoriesService.xpc/CategoriesService
-17431 /System/Library/PrivateFrameworks/RemoteManagement.framework/remotemanagementd
-17434 /usr/libexec/pipelined
-17448 /usr/libexec/microstackshot
-17451 cloudphotod
-17454 /usr/libexec/appleaccountd
-17455 /usr/libexec/batteryintelligenced
-17456 /usr/libexec/silhouette
-17463 /usr/bin/sysdiagnose
-17464 /System/Library/CoreServices/CacheDeleteDaily
-17465 /System/Library/PrivateFrameworks/GenerationalStorage.framework/revisiond
-17474 /usr/libexec/deferredmediad
-17482 /usr/libexec/tzd
-17646 /System/Library/Filesystems/apfs.fs/apfs_iosd
-17983 /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Support/photoanalysisd
-19207 /usr/libexec/wifivelocityd
-22038 /System/Library/PrivateFrameworks/Categories.framework/XPCServices/CategoriesService.xpc/CategoriesService
-22070 /System/Library/CoreServices/SafariSupport.bundle/com.apple.Safari.History
-22083 /System/Library/PrivateFrameworks/MediaAnalysis.framework/mediaanalysisd
-22189 /usr/libexec/gamed
-22195 /usr/libexec/installd
-22196 /System/Library/PrivateFrameworks/MobileInstallation.framework/XPCServices/com.apple.MobileInstallationHelperServ
-22197 /System/Library/PrivateFrameworks/StreamingZip.framework/XPCServices/com.apple.StreamingUnzipService.xpc/com.appl
-22198 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
-22227 /usr/libexec/AuthenticationServicesAgent
-22231 /System/Library/PrivateFrameworks/CoreSuggestions.framework/reversetemplated
-22270 /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/DesktopServicesHelper
-22899 /usr/libexec/misd
-23194 /System/Library/PrivateFrameworks/BarcodeSupport.framework/com.apple.BarcodeSupport.BarcodeNotificationService
-23951 /usr/libexec/backboardd
-23952 /System/Library/PrivateFrameworks/CoreAccessories.framework/XPCServices/ACCHWComponentAuthService.xpc/ACCHWCompon
-23954 /System/Library/CoreServices/SpringBoard.app/SpringBoard
-23963 /System/Library/PrivateFrameworks/WallpaperKit.framework/XPCServices/WallpaperMigrator.xpc/WallpaperMigrator
-23983 /Applications/Spotlight.app/Spotlight
-23984 /var/containers/Bundle/Application/A575FF84-35A1-446B-96AC-350619DCB2AD/Opera.app/Opera
-23985 /System/Library/Frameworks/AppTrackingTransparency.framework/XPCServices/EnforcementService.xpc/EnforcementServic
-23986 /System/Library/PrivateFrameworks/SafariFoundation.framework/XPCServices/CredentialProviderExtensionHelper.xpc/Cr
-23988 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.Networking.xpc/com.apple.WebKit.Networki
-23989 /private/var/containers/Bundle/Application/A575FF84-35A1-446B-96AC-350619DCB2AD/Opera.app/PlugIns/WireGuard Netwo
-23990 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
-23991 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
-23993 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
-24025 /var/containers/Bundle/Application/16F7B0C1-C4E3-4DF9-88B9-D6058B7D5E53/GitHub.app/GitHub
-24030 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
-24031 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
-24032 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.Networking.xpc/com.apple.WebKit.Networki
-24033 /System/Library/Frameworks/Metal.framework/XPCServices/MTLCompilerService.xpc/MTLCompilerService
-24035 /System/Library/Frameworks/Metal.framework/XPCServices/MTLCompilerService.xpc/MTLCompilerService
-24043 /private/var/containers/Bundle/Application/5DFE1DE0-6EE0-4F63-A21E-28F4B66AD7A1/Stocks.app/PlugIns/StocksWidget.a
-24500 /System/Library/PrivateFrameworks/AccessibilityUI.framework/XPCServices/com.apple.accessibility.AccessibilityUISe
-24510 /Applications/Preferences.app/Preferences
-24511 /private/preboot/58248FD2F17893A6DD77A7A6F1E3519AFE2F8F69/jb-O0HCUBNE/procursus/Applications/Filza.app/Filza
-24512 /Applications/MobileSMS.app/MobileSMS
-24513 /Applications/MobileSafari.app/MobileSafari
-24514 /private/preboot/58248FD2F17893A6DD77A7A6F1E3519AFE2F8F69/jb-O0HCUBNE/procursus/Applications/Zebra.app/Zebra
-24515 /Applications/AppStore.app/AppStore
-24607 /private/preboot/58248FD2F17893A6DD77A7A6F1E3519AFE2F8F69/jb-O0HCUBNE/procursus/Applications/Sileo.app/Sileo
-25109 sshd: mobile@ttys000
-25662 /System/Library/PrivateFrameworks/MobileBackup.framework/backupd
-22898 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter
-25111 -zsh
-25147 sudo
-25148 sudo
-25149 -zsh
-25674 freetether-cli
-25678 /bin/ps
-
-=== Recent [FreeTether] logs (last 30 lines) ===
-  Run: grep FreeTether /var/log/syslog | tail -30
-  Or:  oslog --predicate 'eventMessage CONTAINS "FreeTether"' --last 5m
----6---
-No ALTQ support in kernel
-ALTQ related functions disabled
-Status: Disabled for 0 days 22:04:44          Debug: Urgent
-
-State Table                          Total             Rate
----7---
-No ALTQ support in kernel
-ALTQ related functions disabled
-pfctl: DIOCGETRULES: Invalid argument
----8---
-No ALTQ support in kernel
-ALTQ related functions disabled
-pfctl: DIOCGETRULES: Invalid argument
----9---
-net.inet.ip.forwarding: 0
-net.inet6.ip6.forwarding: 0
----10---
-no ip/networkctl/ifconfig available
+Darwin iPhone 21.6.0 Darwin Kernel Version 21.6.0: Fri Mar  6 21:01:24 PST 2026; root:xnu-8020.241.44~1/RELEASE_ARM64_S8000 iPhone8,4 arm Darwin
+---A---
+ProductName:    iPhone OS
+ProductVersion: 15.8.8
+BuildVersion:   19H422
+---B---
+---C---
+---D---
+log: too many arguments
+---E---
+log: too many arguments
+---F---
+/System/Library/Frameworks/CoreTelephony.framework/de.lproj/InfoPlist~iphone.strings
+/System/Library/Frameworks/CoreTelephony.framework/de.lproj/InfoPlist~applewatch.strings
+/System/Library/Frameworks/CoreTelephony.framework/de.lproj/CBMessage.strings
+/System/Library/Frameworks/CoreTelephony.framework/he.lproj/InfoPlist~iphone.strings
+/System/Library/Frameworks/CoreTelephony.framework/he.lproj/InfoPlist~applewatch.strings
+/System/Library/Frameworks/CoreTelephony.framework/he.lproj/CBMessage.strings
+/System/Library/Frameworks/CoreTelephony.framework/ar.lproj/InfoPlist~iphone.strings
+/System/Library/Frameworks/CoreTelephony.framework/ar.lproj/InfoPlist~applewatch.strings
+/System/Library/Frameworks/CoreTelephony.framework/ar.lproj/CBMessage.strings
+/System/Library/Frameworks/CoreTelephony.framework/el.lproj/InfoPlist~iphone.strings
+/System/Library/Frameworks/CoreTelephony.framework/el.lproj/InfoPlist~applewatch.strings
+/System/Library/Frameworks/CoreTelephony.framework/el.lproj/CBMessage.strings
+/System/Library/Frameworks/CoreTelephony.framework/ja.lproj/InfoPlist~iphone.strings
+/System/Library/Frameworks/CoreTelephony.framework/ja.lproj/InfoPlist~applewatch.strings
+/System/Library/Frameworks/CoreTelephony.framework/ja.lproj/CBMessage.strings
+/System/Library/Frameworks/CoreTelephony.framework/PlugIns/CTFollowUpExtension.appex/_CodeSignature/CodeResources
+/System/Library/Frameworks/CoreTelephony.framework/PlugIns/CTFollowUpExtension.appex/Entitlements.plist
+/System/Library/Frameworks/CoreTelephony.framework/PlugIns/CTFollowUpExtension.appex/Info.plist
+/System/Library/Frameworks/CoreTelephony.framework/PlugIns/CTFollowUpExtension.appex/CTFollowUpExtension
+/System/Library/Frameworks/CoreTelephony.framework/en.lproj/InfoPlist~iphone.strings
+---G---
+total 10756
+drwxr-xr-x 16 root wheel      512 Apr 29 22:09 ./
+drwxr-xr-x 45 root wheel     1440 Apr 29 22:09 ../
+-rwxr-xr-x  1 root wheel 23448384 Apr 29 22:09 CommCenter*
+-rwxr-xr-x  1 root wheel   388576 Apr 29 22:09 CommCenterMobileHelper*
+-rwxr-xr-x  1 root wheel    78368 Apr 29 22:09 CommCenterRootHelper*
+-rwxr-xr-x  1 root wheel   155952 Apr 29 22:09 DMHelper*
+-rw-r--r--  1 root wheel       77 Apr 29 22:09 SE13Overrides.plist
+-rw-r--r--  1 root wheel       62 Apr 29 22:09 TextToBinaryMap.plist
+-rw-r--r--  1 root wheel     1492 Apr 29 22:09 default_tech.plist
+-rw-r--r--  1 root wheel  2058240 Apr 29 22:09 lasdcdma.db
+-rw-r--r--  1 root wheel   882688 Apr 29 22:09 lasdgsm.db
+-rw-r--r--  1 root wheel   154624 Apr 29 22:09 lasdlte.db
+-rw-r--r--  1 root wheel     9216 Apr 29 22:09 lasdnr.db
+-rw-r--r--  1 root wheel   835584 Apr 29 22:09 lasdscdma.db
+-rw-r--r--  1 root wheel  4203520 Apr 29 22:09 lasdumts.db
+-rw-r--r--  1 root wheel      802 Apr 29 22:09 tech_config.plist
+---H---
+---I---
+zsh: command not found: awk
+CommCenter PID:
+no /proc
+---J---
+{
+        "EnableTransactions" = true;
+        "LimitLoadToSessionType" = "System";
+        "MachServices" = {
+                "com.apple.basebandd.xpc" = mach-port-object;
+                "com.apple.commcenter.xpc" = mach-port-object;
+                "com.apple.commcenter.mobile-helper-cbupdateservice" = mach-port-object;
+                "com.apple.CoreTelephony.powerlog-Lite.LogChannel" = mach-port-object;
+                "com.apple.aps.CommCenter" = mach-port-object;
+                "com.apple.commcenter.atcs.xpc" = mach-port-object;
+                "com.apple.ipTelephony" = mach-port-object;
+                "com.apple.CellularPlanDaemon.xpc" = mach-port-object;
+                "com.apple.commcenter.ari.rt.xpc" = mach-port-object;
+                "com.apple.commcenter.carrierspace.xpc" = mach-port-object;
+                "com.apple.usernotifications.delegate.com.apple.SIMSetupUIService" = mach-port-object;
+                "com.apple.commcenter.coretelephony.xpc" = mach-port-object;
+                "com.apple.commcenter.cupolicy.xpc" = mach-port-object;
+        };
+        "Label" = "com.apple.CommCenter";
+        "OnDemand" = false;
+        "LastExitStatus" = 9;
+        "PID" = 22898;
+        "Program" = "/System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter";
+        "ProgramArguments" = (
+                "/System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter";
+        );
+};
 iPhone:~ root#
