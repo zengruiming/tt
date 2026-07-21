@@ -1,12 +1,18 @@
-_wireless      25917   0.0  2.8 408003024  57472 cu.d  Ss+   7:18AM   0:03.35 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter
+_wireless      26019  25.1  2.6 407999408  53808 cu.d  Ss+   7:22AM   0:01.57 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter
 ---1---
-kill: not enough arguments
-_wireless      25917   0.0  2.8 408003024  57472 cu.d  Ss+   7:18AM   0:03.35 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter
 ---2---
 ---3---
+Usage: oslog [--info|--debug] [-p <pid|name>] [--noLevelInfo]
 ---4---
-zsh: no matches found: /var/tmp/FTProbe/*.txt
 ---5---
 ---6---
-zsh: no matches found: /var/tmp/freetether*
+chown@  dropbear@  kextstat@  ltop@  p1ctl@  palera1nd@  pwd_mkdb@  sysctl@  taskpolicy@
+---7---
+ellekit not found
+/var/jb/usr/lib/libsubstrate.dylib@
+/var/jb/usr/lib/libellekit.dylib
+---8---
+=== Tether-related Symbols ===
+  CTCarrierSpaceGetSetting                           NOT FOUND
+  CTCarrierSpaceSetSetting                           NOT FOUND
 iPhone:~ root#
