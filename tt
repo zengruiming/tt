@@ -1,18 +1,28 @@
-_wireless      26019  25.1  2.6 407999408  53808 cu.d  Ss+   7:22AM   0:01.57 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter
+[1] 26065 26066
 ---1---
+[1]  + terminated  oslog -p CommCenter 2>&1 | head -100
+{
+    Filter =     {
+        Executables =         (
+            CommCenter,
+            MobileInternetSharing
+        );
+    };
+}
 ---2---
+zsh: command not found: xxd
 ---3---
-Usage: oslog [--info|--debug] [-p <pid|name>] [--noLevelInfo]
+zsh: command not found: file
 ---4---
+lrwxr-xr-x 1 root wheel 32 Jun 11  2024 /var/jb/usr/lib/libsubstrate.dylib -> /var/jb/usr/lib/libellekit.dylib
 ---5---
----6---
-chown@  dropbear@  kextstat@  ltop@  p1ctl@  palera1nd@  pwd_mkdb@  sysctl@  taskpolicy@
----7---
-ellekit not found
-/var/jb/usr/lib/libsubstrate.dylib@
 /var/jb/usr/lib/libellekit.dylib
+---6---
+BackgrounderActionCore.dylib*  CCSupport.dylib*  FreeTether.dylib*  InjectDylib.dylib*  PreferenceLoader.dylib*
+BackgrounderActionCore.plist   CCSupport.plist   FreeTether.plist   InjectDylib.plist   PreferenceLoader.plist
+---7---
 ---8---
-=== Tether-related Symbols ===
-  CTCarrierSpaceGetSetting                           NOT FOUND
-  CTCarrierSpaceSetSetting                           NOT FOUND
+---9---
+BackgrounderActionCore.dylib*  CCSupport.dylib*  FreeTether.dylib*  InjectDylib.dylib*  PreferenceLoader.dylib*
+BackgrounderActionCore.plist   CCSupport.plist   FreeTether.plist   InjectDylib.plist   PreferenceLoader.plist
 iPhone:~ root#
