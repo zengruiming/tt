@@ -7,23 +7,23 @@ FreeTether Status:
   Prefs file: /var/mobile/Library/Preferences/com.freetether.plist
 
 === Network Interfaces ===
-  pdp_ip0      UP    IPv4   10.39.182.222  (point-to-point)
+  pdp_ip0      UP    IPv4   10.72.116.198  (point-to-point)
   pdp_ip0      UP    IPv6   fe80::14d7:8783:6b65:4244  (point-to-point)
-  pdp_ip0      UP    IPv6   2408:8452:440:21c8:1856:38a5:1db3:303b  (point-to-point)
-  pdp_ip0      UP    IPv6   2408:8452:440:21c8:b8fe:a1f5:dfe5:5796  (point-to-point)
+  pdp_ip0      UP    IPv6   2408:8452:4a7:6dc0:18bc:987b:2cc8:cd8f  (point-to-point)
+  pdp_ip0      UP    IPv6   2408:8452:4a7:6dc0:5ce1:149a:c07e:7611  (point-to-point)
   pdp_ip1      UP    IPv6   fe80::876:f3d7:88e:2459  (point-to-point)
-  pdp_ip1      UP    IPv6   2408:8553:440:2d2:800:9324:e6ce:e8a9  (point-to-point)
-  pdp_ip1      UP    IPv6   2408:8553:440:2d2:a54e:33f4:d988:d65f  (point-to-point)
+  pdp_ip1      UP    IPv6   2408:8553:4a7:8a42:4f:9f42:5263:167f  (point-to-point)
+  pdp_ip1      UP    IPv6   2408:8553:4a7:8a42:95d:85ac:45fb:ae72  (point-to-point)
   en0          UP    IPv6   fe80::3d:f544:69f:400d
-  en0          UP    IPv4   192.168.0.112
+  en0          UP    IPv4   192.168.0.110
   utun0        UP    IPv6   fe80::326c:aa36:7a09:a0d9  (point-to-point)
   utun1        UP    IPv6   fe80::cc0a:8321:f4cc:9721  (point-to-point)
   utun2        UP    IPv6   fe80::ce81:b1c:bd2c:69e  (point-to-point)
   ipsec0       UP    IPv6   fe80::94f2:142c:bb71:1918  (point-to-point)
-  ipsec0       UP    IPv6   2408:8553:440:2d2:800:9324:e6ce:e8a9  (point-to-point)
+  ipsec0       UP    IPv6   2408:8553:4a7:8a42:4f:9f42:5263:167f  (point-to-point)
   ipsec1       UP    IPv6   fe80::94f2:142c:bb71:1918  (point-to-point)
-  ipsec1       UP    IPv6   2408:8553:440:2d2:800:9324:e6ce:e8a9  (point-to-point)
-  utun3        UP    IPv4   10.0.7.172  (point-to-point)
+  ipsec1       UP    IPv6   2408:8553:4a7:8a42:4f:9f42:5263:167f  (point-to-point)
+  utun3        UP    IPv4   10.0.94.68  (point-to-point)
 
 === IP Forwarding ===
   net.inet.ip.forwarding = 0
@@ -33,15 +33,15 @@ FreeTether Status:
 --- pfctl -s info ---
 No ALTQ support in kernel
 ALTQ related functions disabled
-Status: Disabled for 0 days 00:30:10          Debug: Urgent
+Status: Disabled for 0 days 20:39:20          Debug: Urgent
 
 State Table                          Total             Rate
   current entries                        0
-  searches                          328310          181.4/s
-  inserts                            28586           15.8/s
-  removals                           28586           15.8/s
+  searches                          328310            4.4/s
+  inserts                            28586            0.4/s
+  removals                           28586            0.4/s
 Counters
-  match                              29575           16.3/s
+  match                              29575            0.4/s
   bad-offset                             0            0.0/s
   fragment                               0            0.0/s
   short                                  0            0.0/s
@@ -49,7 +49,7 @@ Counters
   memory                                 0            0.0/s
   bad-timestamp                          0            0.0/s
   congestion                             0            0.0/s
-  ip-option                            199            0.1/s
+  ip-option                            199            0.0/s
   proto-cksum                            0            0.0/s
   state-mismatch                        89            0.0/s
   state-insert                           0            0.0/s
@@ -69,7 +69,7 @@ No ALTQ support in kernel
 ALTQ related functions disabled
 pfctl: DIOCGETRULES: Invalid argument
 
-=== CoreTelephony Symbols ===
+=== Tether-related Symbols ===
   CTCarrierSpaceGetSetting                           NOT FOUND
   CTCarrierSpaceSetSetting                           NOT FOUND
   CTServerConnectionSetTetheredModeEnabled           NOT FOUND
@@ -91,7 +91,6 @@ pfctl: DIOCGETRULES: Invalid argument
 14384 /usr/sbin/mediaserverd
 14385 /System/Library/PrivateFrameworks/MediaRemote.framework/Support/mediaremoted
 14386 /usr/libexec/routined
-14388 /usr/libexec/misd
 14389 /usr/libexec/configd
 14390 /System/Library/Frameworks/HealthKit.framework/healthd
 14392 /System/Library/CoreServices/powerd.bundle/powerd
@@ -347,38 +346,45 @@ pfctl: DIOCGETRULES: Invalid argument
 17646 /System/Library/Filesystems/apfs.fs/apfs_iosd
 17983 /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Support/photoanalysisd
 19207 /usr/libexec/wifivelocityd
-21646 /usr/libexec/backboardd
-21647 /System/Library/PrivateFrameworks/CoreAccessories.framework/XPCServices/ACCHWComponentAuthService.xpc/ACCHWCompon
-21648 /System/Library/CoreServices/SpringBoard.app/SpringBoard
-21650 /System/Library/PrivateFrameworks/WallpaperKit.framework/XPCServices/WallpaperMigrator.xpc/WallpaperMigrator
-21652 /Applications/Spotlight.app/Spotlight
-21668 /System/Library/PrivateFrameworks/AccessibilityUI.framework/XPCServices/com.apple.accessibility.AccessibilityUISe
-21675 /var/containers/Bundle/Application/A575FF84-35A1-446B-96AC-350619DCB2AD/Opera.app/Opera
-21676 /Applications/MobileSafari.app/MobileSafari
-21677 /private/preboot/58248FD2F17893A6DD77A7A6F1E3519AFE2F8F69/jb-O0HCUBNE/procursus/Applications/Zebra.app/Zebra
-21678 /Applications/AppStore.app/AppStore
-21679 /Applications/Preferences.app/Preferences
-21680 /var/containers/Bundle/Application/0419B7D1-FEDB-4477-B2EB-4FEA3AC1FB11/YouTube.app/YouTube
-21694 /private/preboot/58248FD2F17893A6DD77A7A6F1E3519AFE2F8F69/jb-O0HCUBNE/procursus/Applications/NewTerm.app/NewTerm
-21695 login
-21703 /private/preboot/58248FD2F17893A6DD77A7A6F1E3519AFE2F8F69/jb-O0HCUBNE/procursus/Applications/Filza.app/Filza
-21704 /var/jb/usr/libexec/filza/FilzaHelper
-21722 /System/Library/Frameworks/AppTrackingTransparency.framework/XPCServices/EnforcementService.xpc/EnforcementServic
-21723 /System/Library/PrivateFrameworks/SafariFoundation.framework/XPCServices/CredentialProviderExtensionHelper.xpc/Cr
-21725 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.Networking.xpc/com.apple.WebKit.Networki
-21726 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
-21728 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
-21731 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
-21778 /private/var/containers/Bundle/Application/A575FF84-35A1-446B-96AC-350619DCB2AD/Opera.app/PlugIns/WireGuard Netwo
-21784 /System/Library/PrivateFrameworks/MobileBackup.framework/backupd
-21786 sshd: mobile@ttys000
-14439 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter
-21788 -zsh
-21794 sudo
-21696 -zsh
-21796 sudo
-21797 freetether-cli
-21801 /bin/ps
+22038 /System/Library/PrivateFrameworks/Categories.framework/XPCServices/CategoriesService.xpc/CategoriesService
+22070 /System/Library/CoreServices/SafariSupport.bundle/com.apple.Safari.History
+22083 /System/Library/PrivateFrameworks/MediaAnalysis.framework/mediaanalysisd
+22189 /usr/libexec/gamed
+22195 /usr/libexec/installd
+22196 /System/Library/PrivateFrameworks/MobileInstallation.framework/XPCServices/com.apple.MobileInstallationHelperServ
+22197 /System/Library/PrivateFrameworks/StreamingZip.framework/XPCServices/com.apple.StreamingUnzipService.xpc/com.appl
+22198 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+22227 /usr/libexec/AuthenticationServicesAgent
+22231 /System/Library/PrivateFrameworks/CoreSuggestions.framework/reversetemplated
+22270 /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/DesktopServicesHelper
+22501 /usr/libexec/backboardd
+22512 /System/Library/PrivateFrameworks/CoreAccessories.framework/XPCServices/ACCHWComponentAuthService.xpc/ACCHWCompon
+22513 /System/Library/CoreServices/SpringBoard.app/SpringBoard
+22533 /System/Library/PrivateFrameworks/WallpaperKit.framework/XPCServices/WallpaperMigrator.xpc/WallpaperMigrator
+22535 /System/Library/PrivateFrameworks/AccessibilityUI.framework/XPCServices/com.apple.accessibility.AccessibilityUISe
+22537 /Applications/Spotlight.app/Spotlight
+22868 /private/preboot/58248FD2F17893A6DD77A7A6F1E3519AFE2F8F69/jb-O0HCUBNE/procursus/Applications/NewTerm.app/NewTerm
+22869 login
+22899 /usr/libexec/misd
+22911 /Applications/CTNotifyUIService.app/CTNotifyUIService
+22918 /System/Library/Frameworks/Metal.framework/XPCServices/MTLCompilerService.xpc/MTLCompilerService
+22931 /Applications/Preferences.app/Preferences
+22947 /var/containers/Bundle/Application/A575FF84-35A1-446B-96AC-350619DCB2AD/Opera.app/Opera
+22948 /System/Library/Frameworks/AppTrackingTransparency.framework/XPCServices/EnforcementService.xpc/EnforcementServic
+22949 /System/Library/PrivateFrameworks/SafariFoundation.framework/XPCServices/CredentialProviderExtensionHelper.xpc/Cr
+22951 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.Networking.xpc/com.apple.WebKit.Networki
+22952 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
+22953 /private/var/containers/Bundle/Application/A575FF84-35A1-446B-96AC-350619DCB2AD/Opera.app/PlugIns/WireGuard Netwo
+22955 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
+22956 /System/Library/Frameworks/WebKit.framework/XPCServices/com.apple.WebKit.WebContent.xpc/com.apple.WebKit.WebConte
+22962 sshd: mobile@ttys001
+22898 /System/Library/Frameworks/CoreTelephony.framework/Support/CommCenter
+22870 -zsh
+22965 -zsh
+22972 sudo
+22973 sudo
+22974 freetether-cli
+22978 /bin/ps
 
 === Recent [FreeTether] logs (last 30 lines) ===
   Run: grep FreeTether /var/log/syslog | tail -30
