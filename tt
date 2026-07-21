@@ -1,25 +1,39 @@
-iPhone:~ root# cat /var/tmp/ft_diag.txt | grep -E "bridge|forwarding|pfctl -|nat|rules|utun.*IPv4|Status:|VPN|Wi-Fi|Enabled"
-echo "===CC LOG==="; cat /var/tmp/ft_cc.txt | grep -i freetether | head -20
-Status: Enabled for 0 days 00:00:52           Debug: Urgent
-14545 /System/Library/PrivateFrameworks/InstallCoordination.framework/Support/installcoordinationd
-14595 /usr/sbin/filecoordinationd
-14602 /System/Library/PrivateFrameworks/MapsSuggestions.framework/destinationd
-15377 /System/Library/PrivateFrameworks/ContactsDonation.framework/Versions/A/Support/contactsdonationagent
-FreeTether Status:
-  Enabled:              YES
-  VPN Sharing:          YES
-  Wi-Fi Sharing:        NO
-  utun3        UP    IPv4   10.0.94.68  (point-to-point)
-  bridge100    UP    IPv4   172.20.10.1
-  bridge100    UP    IPv6   fe80::58e2:8fff:fea3:da64
-  bridge100    UP    IPv6   2408:8452:47f:bb37:1c32:52a5:6460:663a
-  bridge100    UP    IPv6   2408:8452:47f:bb37:e4ca:ae6a:ba14:4186
-  net.inet.ip.forwarding = 1
-  net.inet6.ip6.forwarding = 1
---- pfctl -s info ---
---- pfctl -a com.freetether -s nat ---
---- pfctl -a com.freetether -s rules ---
-  CTServerConnectionSetTetheredModeEnabled           NOT FOUND
-  CTServerConnectionGetTetheredModeEnabled           NOT FOUND
-===CC LOG===
+nat on utun3 inet from bridge100:network to any -> (utun3)
+pass in on bridge100 inet route-to (utun3) from bridge100:network to any
+---1---
+pfctl: Use of -f option, could result in flushing of rules
+present in the main ruleset added by the system at startup.
+See /etc/pf.conf for further details.
+
+No ALTQ support in kernel
+ALTQ related functions disabled
+no IP address found for bridge100:network
+/var/tmp/ft_test.conf:1: could not parse host specification
+/var/tmp/ft_test.conf:2: syntax error
+pfctl: Syntax error in config file: pf rules not loaded
+exit=1
+---2---
+No ALTQ support in kernel
+ALTQ related functions disabled
+pfctl: DIOCGETRULES: Invalid argument
+---3---
+No ALTQ support in kernel
+ALTQ related functions disabled
+pfctl: DIOCGETRULES: Invalid argument
+---4---
+pfctl: Use of -f option, could result in flushing of rules
+present in the main ruleset added by the system at startup.
+See /etc/pf.conf for further details.
+
+No ALTQ support in kernel
+ALTQ related functions disabled
+exit=0
+---5---
+No ALTQ support in kernel
+ALTQ related functions disabled
+nat-anchor "com.freetether" all
+---6---
+No ALTQ support in kernel
+ALTQ related functions disabled
+anchor "com.freetether" all
 iPhone:~ root#
